@@ -8,7 +8,7 @@ RUN \
 env PATH $TOOLS_DIR/apache-maven-3.5.3/bin:$PATH
 COPY . /app
 WORKDIR /app
-RUN mkdir ~/.m2 && mv maven_repository ~/.m2/repository
+#RUN mkdir ~/.m2 && mv maven_repository ~/.m2/repository
 RUN mvn clean install
 #ENTRYPOINT [ "sh", "-c", "java -Djava.security.egd=file:/dev/./urandom -jar target/student-api.jar" ]
 ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","target/student-api.jar"]
